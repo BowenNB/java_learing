@@ -1,0 +1,64 @@
+package com.wx.login0909;
+
+
+/*  多行注释
+	图形化编程：登录界面程序
+	组件：账号/密码输入框，复选框，登录/注册登录，窗体，图片
+    javax.swing (可视化组件)    java.awt (元素组件)
+ */
+public class Login {
+	//属性
+	
+	//方法
+	//显示登录界面的方法
+	public void showUI() {
+		//窗体
+		javax.swing.JFrame jf = new javax.swing.JFrame();
+		//像素点 
+		jf.setSize(450, 550);
+		jf.setTitle("登录界面");
+		//设置居中显示
+		jf.setLocationRelativeTo(null);
+		//设置退出进程
+		jf.setDefaultCloseOperation(3);
+		
+		//流式布局管理器
+		java.awt.FlowLayout flow = new java.awt.FlowLayout();
+		//设置窗体布局
+		jf.setLayout(flow);
+		
+		//加载本地图片
+		javax.swing.ImageIcon image = new javax.swing.ImageIcon("D:\\chen\\图片\\1.jpg");
+		//标签
+		javax.swing.JLabel jla = new javax.swing.JLabel(image);
+		jf.add(jla);
+		
+		//用户提示
+		javax.swing.JLabel user = new javax.swing.JLabel("账号:");
+		jf.add(user);
+		
+		//账号框(文本输入框)
+		javax.swing.JTextField jtf = new javax.swing.JTextField();
+		//除了JFrame,其它组件设置大小都是该方法
+		//类 本身就是一种数据类型(引用类型/自定义类型)
+		java.awt.Dimension dm = new java.awt.Dimension(370, 30);
+		jtf.setPreferredSize(dm);
+		jf.add(jtf);
+		
+		//按钮
+		javax.swing.JButton jbu = new javax.swing.JButton("登录");	
+		jf.add(jbu);
+		
+		
+		
+		//设置可见
+		jf.setVisible(true);
+	}
+	//主函数
+	public static void main(String[] args) {
+		//在主函数中，类里面的属性和方法必须通过对象调用
+		Login lo = new Login();
+		lo.showUI();
+	}
+	
+}
